@@ -2,6 +2,8 @@
 
 // Application Programming interface
 
+// API é uma interface de comunicação entre sistemas.
+
 // Uma maneira de se comunicar via HTTP a um servidor e fazer operações como: visualizar, deletar, criar e atualizar dados
 
 // CRUD (create, read, update, delete)
