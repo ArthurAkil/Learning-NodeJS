@@ -1,0 +1,11 @@
+// iniciando um projeto
+
+// Na última aula vismo que o node reclamou a falta do package.json ao instalar o npm install express
+
+// O certo sempre é ter um arquivo desse ao iniciar um novo projeto
+
+// Podemos criar a partir do template, utilizando o comando: npm init;
+
+// Ai teremos um projeto com o package.json
+
+// Este arquivo serve para configurações e salva nossas dependências
