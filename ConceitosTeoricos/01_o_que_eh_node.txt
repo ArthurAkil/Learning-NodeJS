@@ -1,0 +1,17 @@
+O que é node?
+
+Não é uma linguagem de programação;
+
+Uma ferramenta construída sobre o motor JavaScript do google chrome para criar aplicações rápidas e escaláveis;
+
+O problema: cada conexão de um cliente aloca um espaço na memória;
+
+Com Node: cada conexão é um evento executado na engine no node;
+
+Ou seja, o Node suporta muito mais conexões do que php e java em uma maquina igual, por exemplo;
+
+para instalar: https://nodejs.org/en/
+
+instalar (next,next,next)
+
+verificar se está tudo ok, cmd: node -v
