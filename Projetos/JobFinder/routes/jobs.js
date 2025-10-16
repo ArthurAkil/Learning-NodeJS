@@ -8,6 +8,10 @@ router.get("/test", (req, res) => {
   res.send("Deu certo");
 });
 
+router.get("/add", (req, resp) => {
+  resp.render("add");
+});
+
 // adicionar job POST
 router.post("/add", (request, response) => {
   // para adicionar um job precisaremos de um corpo com todos os dados do Job
