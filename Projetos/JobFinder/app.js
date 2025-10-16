@@ -10,6 +10,12 @@ const db = require("./db/connection");
 
 const bodyParser = require("body-parser");
 
+const Job = require("./models/Job"); // puxamos o model
+
+const Sequelize = require("sequelize");
+
+const Op = Sequelize.Op;
+
 const PORT = 3000;
 
 app.listen(PORT, () => {
@@ -44,7 +50,26 @@ db.authenticate()
 
 // routes
 app.get("/", (request, response) => {
-  response.render("index");
+  let search = request.query.job;
+  let query = "%" + search + "%"; //Ph -> PHP, Word -> Wordpress
+
+  if (!search) {
+    Job.findAll({ order: [["createdAt", "DESC"]] })
+      .then((jobs) => {
+        response.render("index", { jobs });
+        // para enviarmos todos jobs (se possuirmos) no banco de dados, colocamos findAll, o order serve para organizar a ordem que serão mostrados, então com o then, renderizamos o template index e todos objetos ja cadastrados no banco de dados
+      })
+      .catch((error) => console.log(error));
+  } else {
+    Job.findAll({
+      where: { title: { [Op.like]: query } },
+      order: [["createdAt", "DESC"]],
+    })
+      .then((jobs) => {
+        response.render("index", { jobs, search });
+      })
+      .catch((error) => console.log(error));
+  }
 });
 
 // jobs routes
