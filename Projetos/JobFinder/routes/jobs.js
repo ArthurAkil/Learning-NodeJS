@@ -4,10 +4,27 @@ const router = express.Router(); // precisamos do objeto de rotas do express
 
 const Job = require("../models/Job"); // e precisamos do model que criamos
 
+// rota de teste
 router.get("/test", (req, res) => {
   res.send("Deu certo");
 });
 
+// detalhe da vaga -> job/1 job/2
+router.get("/job/:id", (request, response) => {
+  Job.findOne({
+    where: { id: request.params.id },
+  })
+    .then((job) => {
+      response.render("job", {
+        job,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+// form da rota de envio
 router.get("/add", (req, resp) => {
   resp.render("add");
 });
