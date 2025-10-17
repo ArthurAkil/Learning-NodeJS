@@ -15,27 +15,38 @@
 const { Sequelize } = require("sequelize");
 // assim pegamos apenas a classe construtora -> mais recomendada
 
+// Adicionando o dotenv
+require("dotenv").config();
+const mysql2 = require("mysql2");
 // Sequelize(nomeDoBanco, userBanco, senhaBanco, {host, qualBanco})
-const sequelize = new Sequelize("cadastro", "root", "12345", {
-  host: "localhost",
-  dialect: "mysql",
-});
+const sequelize = new Sequelize(
+  process.env.MYSQLDATABASE,
+  process.env.MYSQLUSER,
+  process.env.MYSQLPASSWORD,
+  {
+    host: process.env.MYSQLHOST,
+    port: process.env.MYSQLPORT,
+    dialect: "mysql",
+    dialectModule: mysql2,
+    logging: false,
+    pool: { max: 5, min: 0, idle: 30000, acquire: 10000 },
+  }
+);
 
 // 7. verificar se o banco de dados foi autenticado com sucesso
 
-sequelize
-  .authenticate() // verifique se o servidor esta autenticado
-  .then(() => {
+async () => {
+  try {
+    await sequelize.authenticate();
     console.log("Banco de dados conectado com sucesso");
-    // se sim log(mensagem)
-  })
-  .catch((error) =>
-    console.log("Erro ao se conectar com o banco de dados" + error)
-  ); //se der error, log(error)
+  } catch (error) {
+    console.log("Erro ao se conectar com o banco de dados" + error);
+  }
+};
 
 // 8. precisamos utilizar esse arquivo para outros arquivos terem acesso
 
 module.exports = {
-  Sequelize: Sequelize, // exportanto a classe construtora
-  sequelize: sequelize, // exportanto a instancia de conexão
+  Sequelize, // exportanto a classe construtora
+  sequelize, // exportanto a instancia de conexão
 };

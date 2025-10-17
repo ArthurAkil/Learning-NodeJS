@@ -110,9 +110,9 @@ app.delete("/deletar/:id", (req, res) => {
 //--------------------------------------------------------------
 
 // 3 coloquei a porta numa variavel para melhor acesso
-const PORT = 8081;
+const PORT = process.env.PORT || 8081;
 // 3.1 agora colocamos para nosso aplicativo escutar uma porta com o listen() que recebe como parâmetros a porta para acessar, e uma função
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   // 3.2 vai fazer sempre que o servidor abrir:
   console.log(`Servidor rodando na porta: ${PORT}`);
   console.log(`Acesse: http://localhost:${PORT}/`);
