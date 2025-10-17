@@ -1,3 +1,5 @@
+// Esse arquivo é uma referência a conexão ao banco de dados
+
 // 6. sequelize (ajuda na integração com o banco de dados npm install --save sequelize)
 // 6.1 para o sequelize funcionar corretamente nos temos que instalar o driver manualmente
 // # One of the following:
