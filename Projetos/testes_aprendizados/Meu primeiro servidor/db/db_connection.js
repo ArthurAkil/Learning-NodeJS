@@ -10,7 +10,10 @@
 // $ npm install --save tedious # Microsoft SQL Server
 // $ npm install --save oracledb # Oracle Database
 
+// 6.2 existe duas formas de importar o pacote sequelize
+// const Sequelize = require("sequelize"); assim importamos a classe inteira, com todos os tipos de dados
 const { Sequelize } = require("sequelize");
+// assim pegamos apenas a classe construtora -> mais recomendada
 
 // Sequelize(nomeDoBanco, userBanco, senhaBanco, {host, qualBanco})
 const sequelize = new Sequelize("cadastro", "root", "12345", {
@@ -33,6 +36,6 @@ sequelize
 // 8. precisamos utilizar esse arquivo para outros arquivos terem acesso
 
 module.exports = {
-  Sequelize: Sequelize,
-  sequelize: sequelize,
+  Sequelize: Sequelize, // exportanto a classe construtora
+  sequelize: sequelize, // exportanto a instancia de conexão
 };
