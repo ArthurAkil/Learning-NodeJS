@@ -2,7 +2,11 @@
 // 5.1 podemos instalar de forma global: npm install -g nodemon (fica salvo no meu system path do pc)
 // 5.2 ou podemos instalar como dependencia: npm install --save-dev nodemon (utilizei esse, atualiza o package.json)
 // 5.3 agora não iniciamos o servidor mais com node app.js e sim como nodemon app.js ou ajustamos os scripts em package.json "start": "node server.js", "dev": "nodemon server.js" assim podemos iniciar o servidor com npm run dev
+//--------------------------------------------------------------
 
+// 6. sequelize (db)
+
+//--------------------------------------------------------------
 // 0. npm init -> npm install express
 // 1. Primeira coisa que fazemos é importar o express
 const express = require("express");
