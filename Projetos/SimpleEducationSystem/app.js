@@ -32,7 +32,7 @@ app.use("/alunos", alunoRoutes);
 
 // tela inicialzinha
 app.get("/", (request, response) => {
-  res.send("Sistema rodando");
+  response.send("Sistema rodando");
 });
 
 app.listen(PORT, () => {
