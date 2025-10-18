@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const PORT = 8081;
+const coordenadorRoutes = require("./routes/coordenadorRoutes");
+const professorRoutes = require("./routes/professorRoutes");
+const alunoRoutes = require("./routes/alunoRoutes");
 
 // Importando a conexão do banco -> garantie que os models sejam carregados
 const { sequelize } = require("./db/connection");
@@ -21,6 +24,16 @@ sequelize
 
 app.use(express.json()); // não preciso utilizar mais o body-parser pois já foi integrado ao express
 app.use(express.urlencoded({ extended: true }));
+
+// rotas especificas:
+app.use("/coordenadores", coordenadorRoutes);
+app.use("/professores", professorRoutes);
+app.use("/alunos", alunoRoutes);
+
+// tela inicialzinha
+app.get("/", (request, response) => {
+  res.send("Sistema rodando");
+});
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta: ${PORT}`);
