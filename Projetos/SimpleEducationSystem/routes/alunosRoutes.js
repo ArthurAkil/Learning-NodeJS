@@ -158,3 +158,5 @@ router.delete("/deletar/:id", async (request, response) => {
     });
   }
 });
+
+module.exports = router;
