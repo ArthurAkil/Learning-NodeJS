@@ -4,7 +4,7 @@ const Professor = require("../models/Professor");
 const Coordenador = require("../models/Coordenador");
 
 // postar um professor
-router.get("/cadastrar", async (request, response) => {
+router.post("/cadastrar", async (request, response) => {
   try {
     const { nome, materia, CoordenadorId } = request.body;
 
