@@ -37,7 +37,14 @@ router.post("/cadastrar", async (request, response) => {
 // rota de pegar todos os professores
 router.get("/", async (request, response) => {
   try {
-    const professores = await Professor.findAll();
+    const professores = await Professor.findAll({
+      include: [
+        {
+          model: Coordenador,
+          attributes: ["nome"],
+        },
+      ],
+    });
     response.status(200).json({ professores: professores });
   } catch (error) {
     console.log("Erro ao buscar professores" + error);
@@ -51,7 +58,14 @@ router.get("/", async (request, response) => {
 // rota pegar professor específico
 router.get("/:id", async (request, response) => {
   try {
-    const professor = await Professor.findByPk(request.params.id);
+    const professor = await Professor.findByPk(request.params.id, {
+      include: [
+        {
+          model: Coordenador,
+          attributes: ["nome"],
+        },
+      ],
+    });
 
     if (!professor) {
       return response
