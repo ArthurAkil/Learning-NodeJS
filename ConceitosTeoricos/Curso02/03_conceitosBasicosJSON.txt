@@ -1,0 +1,20 @@
+Quando estamos trabalhando com backend estamos enviando JSON para o front de acordo com requisições onde cada rota buscada responde com um JSON específicos com os dados certos
+
+É uma troca de JSON, o front envia um JSON ou requer do back e o back responde também com um JSON ou solicita
+
+exemplo JSON:
+{
+    "chave": "true"
+}
+
+{
+    "email": "contato@email.com",
+    "cliente": "true",
+    "valor": "56.9",
+    "endereco": {
+        "logradouro": "Avenida",
+        "endereco": "Rua tal",
+        "numero": "129"
+    },
+    "itens": ["id": "123","produto": "iphone XR Preto 128"]
+}
