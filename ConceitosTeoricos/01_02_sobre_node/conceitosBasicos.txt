@@ -1,0 +1,30 @@
+Requisição -> Basicamente um pedido que uma pessoa faz no frontend(o que o usuário vê) para o backend (o cerebro do sistema) e esse pedido é feito atraves de uma api e entregue atraves dele também
+
+JavaScript no Backend:
+- execução no servidor
+- é uma plataforma (que utiliza a linguagem JS)
+- utiliza o mesmo sistema do google chrome V8
+- grande comunidade (pessoas e bibliotecas diversas)
+- mesma linguagem (ponta a ponta)
+
+Gerenciador de Pacotes de NodeJS (node pachage manager)
+- gerencia as bibliotecas auxiliares (terceiros)
+- permite disponibilizar minhas bibliotecas
+
+Yarn (parecido com NPM) 
+- velocidade de execução e desenvolvimento
+- funcionalidades interessantes (workspaces - uma biblioteca ser compartilhadas para varios projetos)
+
+Principais caracteristicas do node.JS
+- o node funciona atraves de callback(uma pilha de eventos que ficam se repetindo sem parar)
+- a arquiterura evet loop possui: eventos (rotas,...), callback,
+- roda como single thread: LibUV (faz um processo para que roda em varios processadores)
+- i/o não bloqueante (não tem pause entre as buscas das resquisições): real time, chats
+
+Frameworks:
+Basicos:
+ExpressJS(bem flexivel, seguindo boas praticas), boa para microserviços
+
+Opinativos:
+AdonisJs (arquitetura mair, ja com bibliotecas instaladas, ORM, algumas coisas ja configurados)
+NestJS
