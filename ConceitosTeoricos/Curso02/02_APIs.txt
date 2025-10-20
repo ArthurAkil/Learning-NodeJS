@@ -1,0 +1,23 @@
+Você processo os pedidos feitos pelos usuários de alguma forma, sendo por view, ou de algum processo que gere um html que é passado para o front e esse front mostra ao usuario
+
+Qual o problema dessa situação? Não conseguimos dividir isso em multiplas plataformas. Dizemos que queremos fazer isso ou usar o mesmo sistema para um aplicativo, vindo html vai ser muito dificil identificar de fato as informações que queremos
+
+O problema consiste em fazer uma resposta em html é mais dificil de capturar as informações quando se está usando esse back para multiplos apps
+
+A solução? JSON, em vez de retornar o html pronto, vamos retornar apenas um JSON apenas com as informações (app de alunos: vai enviar apenas os nomes, matriculas, dados) e não respondendo com um html que ja possui os dados, assim fica responsavel pelo front em lidar com as informações e fazer o que quer
+
+JSON, é uma linguagem de COMUNICAÇÃO entre serviços 
+
+O frontedn vai solicitar dados através de rotas (clientes, fornecedores, usuários) para o NodeJS
+
+As rotas se parecem com essas: 
+GET http://api.com/customers
+GET http://api.com/customers/1
+POST http://api.com/customers/cadastrar/
+PUT/PATCH http://api.com/customers/1
+DELETE http://api.com/customers/1
+
+^ Metodos HTTP: GET/POST/PUT/DELETE
+Rotas: http://api.com/customers
+Rotas: http://api.com/users
+Rotas: http://api.com/fornecedores
