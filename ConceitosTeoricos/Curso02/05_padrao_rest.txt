@@ -1,0 +1,27 @@
+REST é conjunto de principios, que quando aplicados de maneira correta em uma aplicação, a beneficie com a arquitetura e padroes da propria web
+
+Recursos:
+Toda aplicação gerencia alguma sinformações. Uma aplicação de uma loja virtua, por exemplo, gerencia seus produtos, clientes, vendas, etc.
+
+Essas coisas que uma aplicação gerencia chamadas de Recursos no modelo REST
+
+URL amigaveis:
+todos os recursos de uma API devem estar representados por URLs amigáveis (rotas) com seus respectivos nomes.
+
+Ações:
+Utilize os próprios métodos HTTP para representar uma intenção de ação (listar, incluir, atualizar, apagar, CRUD)
+Get: http://api.com/customers   -> pegar todos os clientes
+Get: http://api.com/customers/1   -> pegar os dados de um cliente específico
+POST: http://api.com/customers/cadastro/    -> cadastrar um cliente
+PUT/PATCH: http://api.com/customers/atualizar/1   -> atualizar um cliente especifico
+DELETE: http://api.com/customers/deletar/1   -> deletar um cliente especifico
+
+Assim que um recurso é acionado e executado, ele deve retornar um código que indice sucesso ou erro.
+
+Cod.    Semantica
+2xx     Indica que a requisição foi processada com sucesso    
+3xx     Indica ao cliente uma ação a ser tomada para a requisição se conclua
+4xx     Indica erro(s) na requisição causado(s) pelo cliente
+5xx     Indica que a requisição não foi concluída devido a erro(s) no servidor
+
+REST é um padrao, não um framework, portanto deve ser interpretado e utilizado conforme a necessidade
