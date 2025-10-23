@@ -52,6 +52,9 @@ app.get("/customers/:id", async (req, res) => {
 
   const status = customer ? 200 : 404; // se estiver retorna 200 se não 404
 
+  // não mostrando com a formatação boa, podemos fazer JSON.stringfy(customer)
+  console.debug("GET :: /customers/:id", customer);
+
   return res.status(status).json(customer);
 });
 
