@@ -64,6 +64,7 @@ const atualizarAlunoService = async (body, id) => {
     { where: { id: id } }
   );
 
+  // tratamento de erro caso não exista nada que tenha sido atualizado o update retorna 0
   if (linhasAfetadas === 0) {
     return linhasAfetadas;
   }
