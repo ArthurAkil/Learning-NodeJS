@@ -1,0 +1,8 @@
+Uma prática muito utilizada é usar a função do console chamada LOG, basicamente o print
+
+Existe o console.log, console.error, console.debug(), console.warn()
+
+debug(): mensagem de detalhes do desenvolvimento
+log(): mensagem informativa
+warn(): uma mensagem que merece mais atenção
+error(): mensagem preocupante que esta acontecendo algo preocupante
