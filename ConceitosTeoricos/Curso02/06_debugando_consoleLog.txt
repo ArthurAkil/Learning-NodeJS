@@ -21,3 +21,5 @@ app.get("/customers/:id", async (req, res) => {
 
   return res.status(status).json(customer);
 });
+
+Existe também a possibilidade de utilizar o debug do proprio vscode (nivel detalhado maior em comparação ao console). Se precisar ver mais detalhadamente, é recomendado o do vscode
