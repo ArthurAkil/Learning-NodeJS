@@ -86,6 +86,18 @@ app.put("/customers/atualizar/:id", async (req, res) => {
   });
 });
 
+app.delete("/customers/delete/:id", async (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = customers.findIndex((item) => item.id === id);
+  const status = index >= 0 ? 200 : 404;
+
+  if (index >= 0) {
+    customers.splice(index, 1);
+  }
+
+  return res.status(status).send("usuario deletado");
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor na porta: ${PORT}`);
   console.log(`Servidor rodando no http://localhost:${PORT}/`);
