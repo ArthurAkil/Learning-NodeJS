@@ -15,3 +15,13 @@ Customer.create({
     name: "Arthur",
     email: "arthur@email.com"
 })
+
+migrations:
+
+- Controla as versões das tabelas/banco de dados
+- Cada migration contem as intruções de criação, alteração e remoção de tabelas e colunas.
+- Permite manter a base sempre atualizada (desenvolvimento e produção)
+- Uma migration por arquivo e ordenada por data/hora
+- Toda migration pode ser desfeita
+- Depois de uma migration é enviada (git ou produção) nunca mais pode ser desfeita
+- Cada migration manipula uma tabela
