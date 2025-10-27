@@ -1,0 +1,17 @@
+ORM 
+
+- Abstração do banco de dados e tabelas tornam-se Classes
+
+- Existem várias, uma bem famosa é o Sequelize
+
+As tabelas do banco de dados        models (classes)
+
+        customers                       customers
+
+
+INSERT INTO customers (name, email) VALUES ("Arthur", "arthur@email.com")
+
+Customer.create({
+    name: "Arthur",
+    email: "arthur@email.com"
+})
