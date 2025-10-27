@@ -1,6 +1,6 @@
 // Parte de importação
-const express = require("express");
-const routes = require("./routes");
+import express from "express";
+import routes from "./routes";
 
 // Classe onde vai conter a lógica
 class App {
@@ -22,4 +22,5 @@ class App {
 
 // Tudo que vamos exportar que outros arquivos vão usar, só preciso do server do app
 const app = new App();
-module.exports = app.server;
+
+export default app.server;
