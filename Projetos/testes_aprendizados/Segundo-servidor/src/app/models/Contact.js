@@ -1,7 +1,6 @@
 import Sequelize, {Model} from Sequelize;
 
-
-class Customer extends Model {
+class Contact extends Model {
     static init (sequelize){
         super.init({
             name: Sequelize.STRING,
@@ -15,8 +14,8 @@ class Customer extends Model {
     }
 
     static associate(models){
-        this.hasMany(models.Contact);
+        this.belongsTo(models.Customer, {foreingKey: "customer_id"});
     }
 }
 
-export default Customer;
+export default Contact;

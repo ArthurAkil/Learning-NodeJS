@@ -1,22 +1,19 @@
 import Sequelize, {Model} from Sequelize;
 
 
-class Customer extends Model {
+class User extends Model {
     static init (sequelize){
         super.init({
             name: Sequelize.STRING,
             email: Sequelize.STRING,
-            status: Sequelize.ENUM("ACTIVE", "ARCHIVED")
+            password_hash: Sequelize.STRING,
+            provider: Sequelize.BOOLEAN,
             },
             {
                 sequelize,
             }
         );
     }
-
-    static associate(models){
-        this.hasMany(models.Contact);
-    }
 }
 
-export default Customer;
+export default User;
