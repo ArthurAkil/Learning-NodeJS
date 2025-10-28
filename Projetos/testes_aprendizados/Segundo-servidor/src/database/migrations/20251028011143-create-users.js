@@ -21,11 +21,20 @@ module.exports = {
       },
       passwword_hash: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       },
       provider: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        default: false
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       },
     });
 
