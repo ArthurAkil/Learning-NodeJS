@@ -1,6 +1,7 @@
 // Parte de importação
 import express from "express";
 import routes from "./routes";
+import "./database";
 
 // Classe onde vai conter a lógica
 class App {
