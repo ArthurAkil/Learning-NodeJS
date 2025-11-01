@@ -1,3 +1,5 @@
+// Arquivo de exemplo apenas para ter uma introdução de como os verbos http funcionam, o real server está em src (lá está realmente concentrado a lógica de todo backend)
+
 const express = require("express");
 const server = express();
 const PORT = 8080;
